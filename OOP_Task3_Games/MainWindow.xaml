@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Task3_Games"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,0,30,0">
+            <Button x:Name="button_enter" Content="Войти" HorizontalAlignment="Left" Margin="40,20,0,0" Grid.Row="1" VerticalAlignment="Top" Click="button_enter_Click" Background="#FFBBF1F0"/>
+            <Button x:Name="button_register" Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="40,20,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FFBBF1F0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="62,0,30,0">
+            <Label x:Name="label_login" Content="Логин"/>
+            <TextBox x:Name="textBox_login" TextWrapping="Wrap" Text="Julia" Width="150"/>
+            <Label x:Name="label_password" Content="Пароль" Margin="20,0,0,0"/>
+            <TextBox x:Name="textBox_password" TextWrapping="Wrap" Text="*******" Width="150"/>
+            
+        </StackPanel>
+        <TextBox Grid.Row="2" x:Name="textBox_greeting" TextWrapping="Wrap" Text="Hello, Julia!" Width="200" HorizontalAlignment="Right" Margin="0,0,30,0"/>
+
+        <Label x:Name="label_list_games" Grid.Row="3" Content="Список игр" Background="#FF9ADCED" Foreground="#FF361DE4" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <ListBox x:Name="listBox_list_games" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,0,20,0" MinWidth="700" HorizontalAlignment="Center" HorizontalContentAlignment="Left"/>
+        </StackPanel>
+
+        <Label x:Name="label_queue_games" Grid.Row="5" Content="Очередь игр" Background="#FF9ADCED" Foreground="#FF361DE4" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <ListBox x:Name="listBox_queue_games" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,0,20,0" MinWidth="700" HorizontalAlignment="Center" HorizontalContentAlignment="Left"/>
+        </StackPanel>
+
+        <Label x:Name="label_rating" Grid.Row="7" Content="Рейтинг игроков" Background="#FF9ADCED" Foreground="#FF361DE4" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <ListBox x:Name="listBox_rating" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="20,0,20,0" MinWidth="700" HorizontalAlignment="Center" HorizontalContentAlignment="Left"/>
+        </StackPanel>
+
+
+
+
+        <Button x:Name="button_play"  Grid.Row="9" Content="Играть" HorizontalAlignment="Right" Margin="30,0,30,0" VerticalAlignment="Top" Click="button_play_Click" Background="#FF9ADA51" Foreground="#FF204408" FontWeight="Bold" Width="100" Height="40"/>
         
+
+
     </Grid>
 </Window>
